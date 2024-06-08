@@ -50,6 +50,8 @@ export class FiltrosService {
       url = url.slice(0, -1);
     }
 
+    console.log('Generated URL:', url);
+
     return this.http.get<OceanData[]>(url);
   }
 }

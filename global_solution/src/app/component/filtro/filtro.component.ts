@@ -30,6 +30,8 @@ export class FiltroComponent {
   constructor(private filtrosService: FiltrosService) {}
 
   onSearch() {
+    console.log('Filters:', this.filters);
+
     const especiesArray: Especie[] = this.filters.especies.split(',').map((nome: string) => ({ nome: nome.trim(), status: '' }));
     const projetosArray: ProjetoConservacao[] = [];
 
@@ -41,6 +43,8 @@ export class FiltroComponent {
       this.filters.pH,
       this.filters.nivelPoluicao
     ).subscribe(data => {
+      console.log('Received Data:', data);
+      
       this.oceanData = data;
 
       // Prepara os nomes das espécies e dos projetos de conservação
