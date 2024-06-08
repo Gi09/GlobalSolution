@@ -23,33 +23,35 @@ export class FiltroComponent {
     nivelPoluicao: ''
   };
 
-  oceanData: OceanData[] = [];
+  allOceanData: OceanData[] = [];
+  filteredOceanData: OceanData[] = [];
   especiesNomes: string[] = [];
   projetosNomes: string[] = [];
 
-  constructor(private filtrosService: FiltrosService) {}
+  constructor(private filtrosService: FiltrosService) {
+    this.filtrosService.getData().subscribe(data => {
+      this.allOceanData = data;
+      this.filteredOceanData = data;
+      this.prepareNames();
+    });
+  }
 
   onSearch() {
-    console.log('Filters:', this.filters);
+    this.filteredOceanData = this.allOceanData.filter(data => {
+      const matchesRegiao = !this.filters.regiao || data.regiao.includes(this.filters.regiao);
+      const matchesEspecies = !this.filters.especies || this.filters.especies.split(',').every((especie: string) => data.especies.map(e => e.nome.toLowerCase()).includes(especie.trim().toLowerCase()));
+      const matchesProjetos = !this.filters.statusConservacao || this.filters.statusConservacao.split(',').every((projeto: string) => data.projetosConservacao.map(p => p.nomeProjeto.toLowerCase()).includes(projeto.trim().toLowerCase()));
+      const matchesTemperatura = this.filters.temperaturaAgua === null || data.temperaturaAgua == this.filters.temperaturaAgua;
+      const matchesPH = this.filters.pH === null || data.pH == this.filters.pH;
+      const matchesNivelPoluicao = !this.filters.nivelPoluicao || data.nivelPoluicao.includes(this.filters.nivelPoluicao);
 
-    const especiesArray: Especie[] = this.filters.especies.split(',').map((nome: string) => ({ nome: nome.trim(), status: '' }));
-    const projetosArray: ProjetoConservacao[] = [];
-
-    this.filtrosService.getData(
-      this.filters.regiao,
-      especiesArray,
-      projetosArray,
-      this.filters.temperaturaAgua,
-      this.filters.pH,
-      this.filters.nivelPoluicao
-    ).subscribe(data => {
-      console.log('Received Data:', data);
-      
-      this.oceanData = data;
-
-      // Prepara os nomes das espécies e dos projetos de conservação
-      this.especiesNomes = this.oceanData.map(d => d.especies.map(e => e.nome).join(', '));
-      this.projetosNomes = this.oceanData.map(d => d.projetosConservacao.map(p => p.nomeProjeto).join(', '));
+      return matchesRegiao && matchesEspecies && matchesProjetos && matchesTemperatura && matchesPH && matchesNivelPoluicao;
     });
+    this.prepareNames();
+  }
+
+  prepareNames() {
+    this.especiesNomes = this.filteredOceanData.map(d => d.especies.map(e => e.nome).join(', '));
+    this.projetosNomes = this.filteredOceanData.map(d => d.projetosConservacao.map(p => p.nomeProjeto).join(', '));
   }
 }

@@ -1,5 +1,8 @@
 <div class="container">
-  <h1>Oceanic Data Explorer</h1>
+  <h1>Bem vindos ao Oceanic Data Explorer</h1>
+  <h2>Trouxemos uma lista de tudo que tem em nosso Banco de Dados!!!</h2>
+  <h2>Mas saiba que caso queira buscar algum dado específico, temos nosso Search para atende-lo</h2>
+  <h3>Venha descobrir um pouco mais sobre o Oceano conosco</h3>
   <div class="filters">
     <form (ngSubmit)="onSearch()">
       <label>
@@ -12,7 +15,7 @@
       </label>
       <label>
         Projetos de Conservação:
-        <input type="text" [(ngModel)]="filters.projetosConservacao" name="projetosConservacao" />
+        <input type="text" [(ngModel)]="filters.statusConservacao" name="statusConservacao" />
       </label>
       <label>
         Temperatura da Água:
@@ -42,7 +45,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let data of oceanData; let i = index">
+        <tr *ngFor="let data of filteredOceanData; let i = index">
           <td>{{ data.regiao }}</td>
           <td>{{ especiesNomes[i] }}</td>
           <td>{{ projetosNomes[i] }}</td>
