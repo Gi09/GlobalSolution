@@ -4,8 +4,8 @@ import { ProjetoConservacao } from "./ProjetoConservacao";
 export interface OceanData{
     regiao:string,
     temperaturaAgua:number,
-    ph:number,
+    pH:number,
     nivelPoluicao:string,
-    especie:Especie[],
+    especies:Especie[],
     projetosConservacao:ProjetoConservacao[]
 }

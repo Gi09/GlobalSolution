@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Oceanic Data Explorer</h1>
+  <div class="filters">
+    <form (ngSubmit)="onSearch()">
+      <label>
+        Região:
+        <input type="text" [(ngModel)]="filters.regiao" name="regiao" />
+      </label>
+      <label>
+        Espécie:
+        <input type="text" [(ngModel)]="filters.especies" name="especies" />
+      </label>
+      <label>
+        Projetos de Conservação:
+        <input type="text" [(ngModel)]="filters.statusConservacao" name="statusConservacao" />
+      </label>
+      <label>
+        Temperatura da Água:
+        <input type="number" [(ngModel)]="filters.temperaturaAgua" name="temperaturaAgua" />
+      </label>
+      <label>
+        pH:
+        <input type="number" [(ngModel)]="filters.pH" name="pH" />
+      </label>
+      <label>
+        Níveis de Poluição:
+        <input type="text" [(ngModel)]="filters.nivelPoluicao" name="nivelPoluicao" />
+      </label>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="data-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Região</th>
+          <th>Espécie</th>
+          <th>Projetos de Conservação</th>
+          <th>Temperatura da Água</th>
+          <th>pH</th>
+          <th>Níveis de Poluição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of oceanData; let i = index">
+          <td>{{ data.regiao }}</td>
+          <td>{{ especiesNomes[i] }}</td>
+          <td>{{ projetosNomes[i] }}</td>
+          <td>{{ data.temperaturaAgua }}</td>
+          <td>{{ data.pH }}</td>
+          <td>{{ data.nivelPoluicao }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

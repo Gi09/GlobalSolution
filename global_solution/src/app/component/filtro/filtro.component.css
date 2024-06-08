@@ -1,0 +1,30 @@
+.container {
+  margin: 20px;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filters label {
+  margin-right: 20px;
+}
+
+.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
