@@ -1,14 +1,17 @@
 .container {
-  background-color: #cdd6cd; /* Fundo de tela verde claro */
+  /* background-color: #cae0e7; Fundo de tela verde claro */
+  background: rgb(1,50,63);
+background: linear-gradient(36deg, rgba(1,50,63,1) 35%, rgba(31,106,124,1) 73%, rgba(12,206,204,1) 100%);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1, h2, h3 {
-  color: #023502; /* Cor da fonte verde escuro */
+  color: #ffffff; /* Cor da fonte verde escuro */
   font-size: 0.9em; /* Tamanho menor da fonte */
 }
 
 h1 {
-  font-size: 20px; /* Ajuste do tamanho da fonte do h1 */
+  font-size: 30px; /* Ajuste do tamanho da fonte do h1 */
 }
 
 h2 {
@@ -19,12 +22,37 @@ h3 {
   font-size: 15px; /* Ajuste do tamanho da fonte do h3 */
 }
 
+label{
+  color: #ffffff;
+  line-height: 30px;
+}
+
+button{
+  border-radius: 20px;
+  background-color: #033242;
+  color: #ffffff;
+  width: 100px;
+  border-color: #033242;
+}
+
+button:hover{
+  background-color: #0f7486;
+}
+
+input{
+  background-color: rgb(158, 255, 255);
+  border-radius: 20px;
+  border-style: none;
+}
+
+
 .container {
   margin: 20px;
 }
 
 .filters {
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .filters form {
@@ -39,11 +67,10 @@ h3 {
 .data-table table {
   width: 100%;
   border-collapse: collapse;
-  color: #063a06;
+  color: #ffffff;
 }
 
 .data-table th, .data-table td {
-  border: 1px solid #ddd;
   padding: 8px;
 }
 
@@ -51,9 +78,20 @@ h3 {
   background-color: #f2f2f2;
 }
 
+.data-table tr{
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table td{
+  box-sizing: 10px;
+  padding-right: 20px;
+  text-align: center;
+}
+
 .data-table th {
-  border: 1px solid #ddd;
+  /* border-radius: 20px; */
+  /* border: 1px solid #ddd; */
   padding: 8px;
-  background-color: #78b078; /* Fundo do cabeçalho verde escuro */
+  background-color: #033242; /* Fundo do cabeçalho verde escuro */
   color: white; /* Cor da fonte do cabeçalho e células para contraste */
 }
