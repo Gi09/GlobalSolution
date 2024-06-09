@@ -1,4 +1,25 @@
 .container {
+  background-color: #cdd6cd; /* Fundo de tela verde claro */
+}
+
+h1, h2, h3 {
+  color: #023502; /* Cor da fonte verde escuro */
+  font-size: 0.9em; /* Tamanho menor da fonte */
+}
+
+h1 {
+  font-size: 20px; /* Ajuste do tamanho da fonte do h1 */
+}
+
+h2 {
+  font-size: 15px; /* Ajuste do tamanho da fonte do h2 */
+}
+
+h3 {
+  font-size: 15px; /* Ajuste do tamanho da fonte do h3 */
+}
+
+.container {
   margin: 20px;
 }
 
@@ -18,6 +39,7 @@
 .data-table table {
   width: 100%;
   border-collapse: collapse;
+  color: #063a06;
 }
 
 .data-table th, .data-table td {
@@ -27,4 +49,11 @@
 
 .data-table th {
   background-color: #f2f2f2;
+}
+
+.data-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #78b078; /* Fundo do cabeçalho verde escuro */
+  color: white; /* Cor da fonte do cabeçalho e células para contraste */
 }
