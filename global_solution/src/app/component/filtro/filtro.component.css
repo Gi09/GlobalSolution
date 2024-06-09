@@ -1,7 +1,7 @@
 .container {
   /* background-color: #cae0e7; Fundo de tela verde claro */
-  background: rgb(1,50,63);
-background: linear-gradient(36deg, rgba(1,50,63,1) 35%, rgba(31,106,124,1) 73%, rgba(12,206,204,1) 100%);
+  /* background: rgb(1,50,63); */
+/* background: linear-gradient(36deg, rgba(1,50,63,1) 35%, rgba(31,106,124,1) 73%, rgba(12,206,204,1) 100%); */
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
