@@ -1,27 +1,22 @@
-# GlobalSolution
+# GlobalSolution - Ocean Data
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) na versão 17.3.0.
 
-## Development server
+## Desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Todo desenvolvimento foi feito na linguagem TypeScript e HTML, foi feita a integração com a API e listagem dos dados além da filtragem dinâmica.
+A parte de estilização foi feita com CSS.
 
-## Code scaffolding
+## Execução 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para executar o código e ver o layout é necessário clonar o repoitório, acessar a pasta `global_solution` e por fim digitar o comando `ng serve` no terminal.
 
-## Build
+## Layout
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+A primeira tela é uma listagem completa dos dados encontrados na API.
 
-## Running unit tests
+![tela1](images\Tela1.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Pode-se filtrar por dados específicos, basta digitar a palavra que deseja procurar e clicar em `Search`, a filtragem será feita e retornará os dados que foram pesquisados.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![tela2](images\Tela2.png)
